@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="설치 없이 가입 즉시 바로 이용할 수 있는 무료 채팅 서비스를 제공 해 드리겠습니다." />
+    <meta name="author" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="바로 이용하는 무료 채팅 솔루션" />
+    <meta property="og:description" content="설치 없이 가입 즉시 바로 이용할 수 있는 무료 채팅 서비스를 제공 해 드리겠습니다." />
+    <meta property="og:image" content="https://www.vchatcloud.com/img/common/og_img.png" />
+    <meta property="og:url" content="https://www.vchatcloud.com" />
+    <title>RTC-PC 2형</title>
+    <link rel="canonical" href="https:// vchatcloud.com/index.html" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/c13f14f04a.js" crossorigin="anonymous"></script>
+
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/8.1.0/adapter.min.js"
+      integrity="sha512-w7RWyKh35UnZe3T7sp8+JLBQWKz4QzOLfQbfNo005DlSSGBhpBPmf5ywPwMyyyB9Qbb/0YZsyqFQFdbUyew6vg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.0/dist/sockjs.min.js"></script>
+
+    <script src="https://vchatcloud.com/lib/vchatcloud-last.min.js"></script>
+    <script src="js/errMsg.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/rtc.js"></script>
+    <script>
+      channelKey = '';
+    </script>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <section>
+        <div class="pc">
+          <article class="header">
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </article>
+
+          <article class="contents">
+            <div class="toast" style="display: none"></div>
+            <!-- 비디오 영역 -->
+            <div class="webcam">
+              <div class="login" style="display: block">
+                <p class="login-title">채팅방 설정</p>
+                <div class="name">
+                  <label for="name">대화명</label>
+                  <input class="name" type="text" id="name" value="" placeholder="로그인 할 대화명을 입력 해주세요." />
+                  <p></p>
+                </div>
+                <button class="popupbtn">확인</button>
+              </div>
+              <div class="cam-area">
+                <div class="cam-list"></div>
+              </div>
+
+              <!-- 비디오 버튼 영역 -->
+              <div class="cam-footer">
+                <p class="roomtitle"></p>
+                <ul class="cam-btn">
+                  <li class="mic btn_on" onclick="mic_on_off(this)">
+                    <img src="img/webRTC/on_mic.png" alt="마이크 재생" />
+                  </li>
+                  <li class="exit btn_on">
+                    <img src="img/webRTC/exit.png" alt="화상채팅 종료" />
+                  </li>
+                  <li class="cam btn_on" onclick="cam_on_off(this)">
+                    <img src="img/webRTC/on_cam.png" alt="카메라 재생" />
+                  </li>
+                </ul>
+                <p class="present-btn"><img src="img/webRTC/present.png" alt="Present now" /> Present now</p>
+              </div>
+            </div>
+            <!-- 비디오 영역 끝 -->
+          </article>
+        </div>
+        <!-- 샘플 화면 끝 -->
+      </section>
+    </div>
+  </body>
+</html>
