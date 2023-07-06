@@ -71,7 +71,7 @@ function videoInit() {
     });
     channel.on('rtcRemoteStreamAppend', function(event) {
         let stream = event.target;
-        let html = $(`div[name=${event.clientKey}]`, listWrap);
+        let html = $(`div[name="${event.clientKey}"]`, listWrap);
         if (!html.length) {
             html = $(res.remoteVideo).attr({ name: event.clientKey });
             listWrap.append(html);
@@ -86,7 +86,7 @@ function videoInit() {
         channel.setRTCRemoteMedia(video, event.clientKey)
     });
     channel.on('rtcRemoteStreamRemove', function(event) {
-        let html = $(`div.camvideo-wrap[name=${event.clientKey}]`, listWrap);
+        let html = $(`div.camvideo-wrap[name="${event.clientKey}"]`, listWrap);
         if (html.length) {
             html.remove();
         }
@@ -120,14 +120,14 @@ function videoInit() {
     channel.on('rtcRemoteAudioChanged', function(event) {
         console.log("Remote audio", event)
         let is_mic = event.enable;
-        let html = $(`div.camvideo-wrap[name=${event.clientKey}]`, listWrap);
+        let html = $(`div.camvideo-wrap[name="${event.clientKey}"]`, listWrap);
         $('.nomic', html).toggleClass('active', !is_mic);
     });
 
     channel.on('rtcRemoteVideoChanged', function(event) {
         console.log("Remote video", event)
         let is_cam = event.enable;
-        let html = $(`div.camvideo-wrap[name=${event.clientKey}]`, listWrap);
+        let html = $(`div.camvideo-wrap[name="${event.clientKey}"]`, listWrap);
         $('.nocam', html).toggleClass('active', !is_cam);
         $('.camvideo video', html).css({ 'display': is_cam ? '' : 'none' });
     });
